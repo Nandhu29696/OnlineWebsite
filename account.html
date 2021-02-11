@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online shopping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cairo&family=Comfortaa&family=Syne+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="logo" width="125px"></a>
+        </div>
+        <nav>
+            <ul id="menuitems">
+                <li><a href="index.html" class="link-a">Home</a></li>
+                <li><a href="product.html" class="link-a">Product</a></li>
+                <li><a href="#about" class="link-a">About</a></li>
+                <li><a href="#contact" class="link-a">Contact</a></li>
+                <li><a href="account.html" class="link-a">Account</a></li>
+            </ul>
+        </nav>
+        <a href="cart.html"><img src="images/cart.png" class="cart" width="30px" height="30px"></a>
+        <img src="images/menu.png" class="menu-icon" width="30px" height="30px" onclick="menutoggle()">
+    </div>
+    </div>
+
+<!------ Account page ---------->
+
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/fit.png" width="80%">
+            </div>
+            <div class="col-2">
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id="indicator">
+                    </div>
+                    <form id="loginform">
+                        <input type="text" placeholder="username">
+                        <input type="password" placeholder="password">
+                        <button type="submit" class="btn">Login</button>
+                        <a href="">Forgot password</a>
+                    </form>
+                    <form id="regform">
+                        <input type="text" placeholder="username">
+                        <input type="email" placeholder="email id">
+                        <input type="password" placeholder="password">
+                        <button type="submit" class="btn">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------Footer---------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download our App for Android and IOS</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
+                </div>
+            </div>
+            <div class="footer-col-2" id="about">
+                <img src="images/logo-white.png">
+                <p>Our purpose is to sustainable to make pleasure and benefits of sports accessible to the many</p>                
+            </div>
+            <div class="footer-col-3">
+                <h3>Usual links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog post</li>
+                    <li>Return policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4" id="contact">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                    <li>LinkedIn</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2020 - Easy tutorial</p>
+    </div>
+</div>
+
+<!---------JS for toggle menu--------->
+<script>
+    var menuitems=document.getElementById("menuitems");
+    menuitems.style.maxHeight="0px";
+
+    function menutoggle(){
+        if(menuitems.style.maxHeight=="0px"){
+            menuitems.style.maxHeight="200px";
+        }
+        else{
+            menuitems.style.maxHeight="0px";
+        }
+    }
+</script>
+
+<!---------JS for toggle form--------->
+<script>
+    var loginform=document.getElementById("loginform")
+    var regform=document.getElementById("regform")
+    var indicator=document.getElementById("indicator")
+
+    function register(){
+        regform.style.transform="translateX(0px)";
+        loginform.style.transform="translateX(0px)";
+        indicator.style.transform="translateX(100px)";
+    }
+
+    function login(){
+        regform.style.transform="translateX(300px)";
+        loginform.style.transform="translateX(300px)";
+        indicator.style.transform="translateX(0px)";
+    }
+</script>
+</body>
+</html>
